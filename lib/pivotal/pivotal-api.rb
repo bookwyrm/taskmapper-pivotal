@@ -60,8 +60,22 @@ module PivotalAPI
   class Story < Base
     self.site += 'projects/:project_id/'
     schema do
-      # Specify attribute that isn't always in attributes of fetched instance
+      attribute 'id', :integer
+      attribute 'project_id', :integer
+      attribute 'story_type', :string
+      attribute 'url', :string
+      attribute 'estimate', :integer
+      attribute 'current_state', :string
+      attribute 'description', :string
+      attribute 'name', :string
+      attribute 'requested_by', :string
+      attribute 'owned_by', :string
       attribute 'labels', :string
+
+      # Use string for unsupported types per ActiveResource documentation
+      attribute 'created_at', :string
+      attribute 'updated_at', :string
+      attribute 'notes', :string
     end
   end
 

@@ -90,3 +90,4 @@ module PivotalAPI
   class AllActivity < Base
   end
 end
+
